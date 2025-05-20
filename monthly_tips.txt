@@ -10,3 +10,91 @@ Use encryption tools to protect sensitive communications.
 Educate yourself on the latest cybersecurity threats and scams.
 Dispose of old devices securely by wiping all data first.
 Be cautious of holiday scams and unsolicited offers.
+Use a password manager to generate and store complex passwords safely.
+Avoid sharing personal information on unsecured websites.
+Log out of accounts when using shared or public computers.
+Disable Bluetooth when not in use to prevent unauthorized access.
+Use a firewall to block unauthorized network traffic.
+Regularly scan USB devices for malware before use.
+Monitor your bank and credit card statements for suspicious activity.
+Set up account recovery options like a backup email or phone number.
+Limit the amount of personal information you share online.
+Be wary of links and attachments in unsolicited emails and messages.
+Use HTTPS websites for secure browsing.
+Don’t use the same password for work and personal accounts.
+Avoid installing apps from unofficial sources.
+Regularly delete unused apps and accounts.
+Turn on automatic updates on your devices where possible.
+Use biometric authentication (fingerprint, face ID) if available.
+Avoid clicking on pop-up ads or suspicious download links.
+Use separate accounts or profiles for work and personal use.
+Regularly clear your browser cache and cookies.
+Use privacy-focused search engines and browsers.
+Secure your home Wi-Fi network with a strong password.
+Change default passwords on all new devices immediately.
+Limit physical access to your devices and sensitive information.
+Be cautious when connecting devices to unknown USB ports or chargers.
+Don’t leave devices unattended in public places.
+Use encrypted messaging apps for confidential conversations.
+Be aware of “shoulder surfing” when entering passwords or PINs.
+Keep your recovery codes for 2FA in a safe, offline place.
+Use security questions that are hard to guess or find online.
+Disable auto-connect to Wi-Fi networks on your devices.
+Avoid oversharing on social media, especially location information.
+Regularly check app permissions and revoke unnecessary access.
+Protect your webcam and microphone with covers or disable when not used.
+Avoid downloading pirated software or media files.
+Use separate email accounts for personal, professional, and shopping activities.
+Turn off location services on apps unless absolutely necessary.
+Educate family members, especially children, about online safety.
+Use encrypted backups for sensitive data stored in the cloud.
+Be skeptical of messages claiming urgent action required for account security.
+Check URLs carefully to avoid fake or lookalike websites.
+Avoid using default usernames like “admin” on your devices.
+Use VPN services on public or untrusted networks.
+Avoid using public charging stations that could be compromised.
+Regularly audit your connected devices on your home network.
+Avoid using personal devices for unknown or untrusted apps.
+Regularly review your credit report for fraudulent accounts.
+Use privacy screen protectors on devices in public places.
+Backup passwords securely before resetting them.
+Regularly update firmware on routers and IoT devices.
+Beware of social engineering attacks over phone or email.
+Avoid scanning QR codes from untrusted sources.
+Turn off Wi-Fi and Bluetooth when not needed to reduce attack surfaces.
+Avoid saving passwords in browsers; use a dedicated password manager instead.
+Use network segmentation to separate personal and work devices.
+Check website certificates before entering sensitive information.
+Avoid public displays of sensitive data or information.
+Be cautious of “free” software that asks for excessive permissions.
+Review your cloud storage sharing settings regularly.
+Use strong, randomly generated answers for security questions.
+Monitor online accounts for data breaches and change passwords immediately.
+Avoid downloading email attachments from unknown senders.
+Regularly test your backup data to ensure it can be restored.
+Use hardware security keys for two-factor authentication where possible.
+Set device timeouts and screen locks to protect unattended devices.
+Never share passwords via email, text, or messaging apps.
+Disable unused services and ports on your devices.
+Encrypt sensitive files before storing or sharing them.
+Avoid oversharing professional details on public platforms like LinkedIn.
+Regularly clear your call and message logs on mobile devices.
+Be cautious with browser extensions and plugins; install only trusted ones.
+Keep a list of your devices and their serial numbers for tracking.
+Enable “find my device” features for mobile and laptops.
+Review security settings on your IoT (smart home) devices.
+Avoid connecting to networks that require you to install unknown certificates.
+Use a separate device or profile for online banking.
+Avoid clicking on ads promising prizes or giveaways.
+Use a separate device for sensitive work if possible.
+Beware of “man-in-the-middle” attacks on untrusted networks.
+Use strong, complex PINs on mobile devices.
+Turn off automatic Wi-Fi network joining to unknown networks.
+Keep your mobile operating system updated regularly.
+Use privacy-enhancing browser add-ons like ad blockers or anti-tracking.
+Regularly review your digital footprint and remove old or unused accounts.
+Avoid sharing photos with geotags or sensitive information.
+Consider disabling JavaScript on browsers for added security (with caution).
+Never plug in unknown USB devices into your computer.
+Create regular security audits for your personal devices.
+Stay informed about new cyber threats from trusted sources and government advisories
