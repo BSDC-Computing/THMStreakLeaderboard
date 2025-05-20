@@ -43,7 +43,7 @@ Will (L3 App Dev Year 1), 0
 Daniel (L3 App Dev Year 1), 0
 Alfie (L3 App Dev Year 1), 1
 Lily (L3 App Dev Year 1), 1
-George (L3 App Dev Year 1), 0
+George (L3 App Dev Year 1), 1
 Dragos (L3 App Dev Year 1), 1
 Archie (L3 App Dev Year 1), 0
 Sienna (L3 App Dev Year 1), 1
