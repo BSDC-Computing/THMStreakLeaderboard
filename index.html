@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="theme-color" content="#1b2640">
+  <title>THM Streak Leaderboard</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Fira Sans', sans-serif;
+      background-color: #1b2640;
+      color: #e5f4ff;
+    }
+
+    body.light-mode {
+      background-color: #f9f9f9;
+      color: #222;
+    }
+
+    header {
+      background: linear-gradient(270deg, #1b2640, #283c63, #1b2640);
+      background-size: 600% 600%;
+      animation: gradientMove 15s ease infinite;
+      padding: 1.5rem;
+      text-align: center;
+      border-bottom: 3px solid #a6ff00;
+    }
+
+    header h1 {
+      margin: 0;
+      color: #a6ff00;
+      font-size: 2.5rem;
+    }
+
+    table {
+      width: 100%;
+      max-width: 800px;
+      margin: 2rem auto;
+      border-collapse: collapse;
+      background-color: #223050;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      overflow-x: auto;
+    }
+
+    body.light-mode table {
+      background-color: #fff;
+      color: #222;
+    }
+
+    th, td {
+      padding: 1rem;
+      text-align: left;
+      color: #e5f4ff;
+      vertical-align: middle;
+    }
+
+    body.light-mode th, body.light-mode td {
+      color: #222;
+    }
+
+    th {
+      background-color: #2e3d5c;
+      color: #a6ff00;
+      font-size: 1.1rem;
+    }
+
+    body.light-mode th {
+      background-color: #eee;
+      color: #1b2640;
+    }
+
+    tr {
+      border-bottom: 1px solid #34435f;
+    }
+
+    tr:nth-child(even) {
+      background-color: #1f2a44;
+    }
+
+    tbody tr:hover {
+      background-color: #2e3d5c;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .gold { background-color: #b8860b !important; color: black; }
+    .silver { background-color: #a9a9a9 !important; color: black; }
+    .bronze { background-color: #cd7f32 !important; color: black; }
+    .active { border-left: 4px solid #a6ff00; font-weight: bold; }
+
+    .fade-in {
+      animation: fadeIn 0.6s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .refresh-btn {
+      display: block;
+      margin: 1rem auto;
+      background-color: #a6ff00;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #1b2640;
+      font-size: 1rem;
+    }
+
+    .streak-badge {
+      margin-left: 10px;
+      font-weight: bold;
+      color: #ff9800;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      color: #bcdcff;
+    }
+
+    #countdown, #last-updated {
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: -1rem;
+    }
+
+    /* Progress bar styles */
+    .progress-bar-container {
+      background: #40587b;
+      border-radius: 12px;
+      height: 18px;
+      width: 100%;
+      overflow: hidden;
+      margin-top: 6px;
+    }
+
+    .progress-bar-fill {
+      background: #a6ff00;
+      height: 100%;
+      width: 0%;
+      border-radius: 12px 0 0 12px;
+      transition: width 0.6s ease;
+    }
+
+    body.light-mode tr:nth-child(even) {
+  background-color: #f5f5f5;  /* very light grey, subtle stripe */
+}
+
+body.light-mode tbody tr:hover {
+  background-color: #d1d1d1; /* light hover effect */
+}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>THM Streak Leaderboard</h1>
+  </header>
+
+  <button onclick="toggleTheme()" class="refresh-btn">🌓 Toggle Theme</button>
+  <input type="text" id="searchInput" placeholder="Search name..." class="refresh-btn" onkeyup="filterLeaderboard()" />
+
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Streak (Days)</th>
+      </tr>
+    </thead>
+    <tbody id="leaderboard-body">
+      <tr><td colspan="3">Loading...</td></tr>
+    </tbody>
+  </table>
+
+  <p id="countdown">Refreshing in 10 seconds...</p>
+  <p id="last-updated"></p>
+
+  <footer>
+    Scores last updated by Michael on 19th May 2025
+  </footer>
+
+  <script>
+    const titles = ["🔥 THM Leaderboard", "📈 Who's on top?", "💻 Keep the streak!"];
+    let titleIndex = 0;
+    setInterval(() => {
+      document.title = titles[titleIndex];
+      titleIndex = (titleIndex + 1) % titles.length;
+    }, 3000);
+
+    function toggleTheme() {
+      document.body.classList.toggle('light-mode');
+      localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+    }
+
+    function milestoneBadge(streak) {
+      if (streak >= 100) return "🏆";
+      if (streak >= 50) return "💪";
+      return "";
+    }
+
+    function filterLeaderboard() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const rows = document.querySelectorAll("#leaderboard-body tr");
+
+      rows.forEach(row => {
+        const nameCell = row.cells[1];
+        if (nameCell) {
+          const name = nameCell.textContent.toLowerCase();
+          row.style.display = name.includes(input) ? "" : "none";
+        }
+      });
+    }
+
+    function loadLeaderboard() {
+  fetch('leaderboard.txt')
+    .then(response => response.text())
+    .then(data => {
+      const rows = data.trim().split('\n').map(line => {
+        let [fullName, streakStr] = line.split(',');
+        fullName = fullName.trim();
+        const streak = parseInt(streakStr);
+
+        // Extract class if in parentheses in the name
+        let className = null;
+        const classMatch = fullName.match(/\(([^)]+)\)$/);
+        if (classMatch) {
+          className = classMatch[1].trim();
+          fullName = fullName.replace(/\s*\([^)]+\)$/, '').trim();
+        }
+
+        return { name: fullName, streak, className };
+      });
+
+      // Sort descending by streak
+      rows.sort((a, b) => b.streak - a.streak);
+
+      // Track highest streak per group
+      const highestPerClass = {};
+
+      rows.forEach(entry => {
+        if (entry.className) {
+          if (!highestPerClass[entry.className] || entry.streak > highestPerClass[entry.className].streak) {
+            highestPerClass[entry.className] = entry;
+          }
+        }
+      });
+
+      const tbody = document.getElementById('leaderboard-body');
+      tbody.innerHTML = '';
+
+      const maxStreak = rows.length ? rows[0].streak : 1;
+
+      rows.forEach((entry, index) => {
+        const tr = document.createElement('tr');
+        tr.classList.add('fade-in');
+
+        if (index === 0) tr.classList.add('gold');
+        else if (index === 1) tr.classList.add('silver');
+        else if (index === 2) tr.classList.add('bronze');
+
+        if (entry.name.toLowerCase() === 'yourname') {
+          tr.classList.add('active');
+        }
+
+        const fire = entry.streak >= 50 ? '<span class="streak-badge">🔥 On fire!</span>' : '';
+        const badge = milestoneBadge(entry.streak);
+        const progressPercent = Math.round((entry.streak / maxStreak) * 100);
+
+        tr.innerHTML = `
+          <td>${index + 1} ${badge}</td>
+          <td>${entry.name} ${entry.className ? `(${entry.className})` : ''} ${fire}</td>
+          <td>
+            ${entry.streak}
+            <div class="progress-bar-container">
+              <div class="progress-bar-fill" style="width: ${progressPercent}%;"></div>
+            </div>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      // Show highest streak per class somewhere below the table
+      let highestHtml = '<h3>Highest Streak Per Group</h3><ul>';
+      for (const cls in highestPerClass) {
+        const student = highestPerClass[cls];
+        const dayLabel = student.streak === 1 ? 'day' : 'days';
+highestHtml += `<li><strong>${cls}:</strong> ${student.name} (${student.streak} ${dayLabel})</li>`;
+
+      }
+      highestHtml += '</ul>';
+
+      let container = document.getElementById('highest-per-class');
+      if (!container) {
+        container = document.createElement('div');
+        container.id = 'highest-per-class';
+        container.style.maxWidth = '800px';
+        container.style.margin = '1rem auto';
+        container.style.padding = '1rem';
+        container.style.background = '#223050';
+        container.style.color = '#a6ff00';
+        container.style.borderRadius = '12px';
+        document.body.insertBefore(container, document.getElementById('countdown'));
+      }
+      container.innerHTML = highestHtml;
+
+      document.getElementById('last-updated').innerText = `Last updated: ${new Date().toLocaleTimeString()}`;
+    })
+    .catch(error => {
+      document.getElementById('leaderboard-body').innerHTML = `
+        <tr><td colspan="3">Error loading leaderboard.</td></tr>
+      `;
+      console.error('Failed to load leaderboard:', error);
+    });
+}
+
+
+    // Load theme on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      if (localStorage.getItem('theme') === 'light') {
+        document.body.classList.add('light-mode');
+      }
+    });
+
+    // Load leaderboard on page load
+    loadLeaderboard();
+
+    // Auto-refresh every 10 seconds
+    setInterval(loadLeaderboard, 10000);
+
+    // Countdown timer
+    let countdown = 10;
+    setInterval(() => {
+      countdown--;
+      if (countdown <= 0) countdown = 10;
+      document.getElementById('countdown').innerText = `Refreshing in ${countdown} second${countdown === 1 ? '' : 's'}...`;
+    }, 1000);
+
+    // Console cheer message
+    setTimeout(() => {
+      console.log('%cKeep going! Every day counts! 💪', 'color: #a6ff00; font-size: 1.2rem; font-weight: bold;');
+    }, 2000);
+  </script>
+</body>
+</html>
