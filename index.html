@@ -309,11 +309,17 @@ rows.forEach(entry => {
       // Show highest streak per class somewhere below the table
       let highestHtml = '<h3>Highest Streak Per Group</h3><ul>';
       for (const cls in highestPerClass) {
-        const student = highestPerClass[cls];
-        const dayLabel = student.streak === 1 ? 'day' : 'days';
-highestHtml += `<li><strong>${cls}:</strong> ${student.name} (${student.streak} ${dayLabel})</li>`;
+  const students = highestPerClass[cls];
+  const streak = students[0].streak;
+  const dayLabel = streak === 1 ? 'day' : 'days';
+  const names = students.map(s => s.name).join(', ');
 
-      }
+  highestHtml += `<li><strong>${cls}:</strong> ${names} (${streak} ${dayLabel})</li>`;
+}
+
+
+
+      
       highestHtml += '</ul>';
 
       let container = document.getElementById('highest-per-class');
