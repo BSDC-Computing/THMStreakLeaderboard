@@ -254,13 +254,23 @@ body.light-mode tbody tr:hover {
       // Track highest streak per group
       const highestPerClass = {};
 
-      rows.forEach(entry => {
-        if (entry.className) {
-          if (!highestPerClass[entry.className] || entry.streak > highestPerClass[entry.className].streak) {
-            highestPerClass[entry.className] = entry;
-          }
-        }
-      });
+rows.forEach(entry => {
+  if (entry.className) {
+    const current = highestPerClass[entry.className];
+
+    if (!current) {
+      highestPerClass[entry.className] = [entry];
+    } else {
+      const currentStreak = current[0].streak;
+
+      if (entry.streak > currentStreak) {
+        highestPerClass[entry.className] = [entry];
+      } else if (entry.streak === currentStreak) {
+        highestPerClass[entry.className].push(entry);
+      }
+    }
+  }
+});
 
       const tbody = document.getElementById('leaderboard-body');
       tbody.innerHTML = '';
