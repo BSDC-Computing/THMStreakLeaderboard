@@ -1,12 +1,12 @@
-January: Always use strong, unique passwords for each of your accounts.
-February: Enable two-factor authentication wherever possible.
-March: Keep your software and devices up to date to protect against vulnerabilities.
-April: Beware of phishing emails—always verify the sender before clicking links.
-May: Regularly back up important data to a secure location.
-June: Use a reputable antivirus and anti-malware solution.
-July: Avoid using public Wi-Fi for sensitive transactions without a VPN.
-August: Regularly review your privacy settings on social media.
-September: Use encryption tools to protect sensitive communications.
-October: Educate yourself on the latest cybersecurity threats and scams.
-November: Dispose of old devices securely by wiping all data first.
-December: Be cautious of holiday scams and unsolicited offers.
+Always use strong, unique passwords for each of your accounts.
+Enable two-factor authentication wherever possible.
+Keep your software and devices up to date to protect against vulnerabilities.
+Beware of phishing emails—always verify the sender before clicking links.
+Regularly back up important data to a secure location.
+Use a reputable antivirus and anti-malware solution.
+Avoid using public Wi-Fi for sensitive transactions without a VPN.
+Regularly review your privacy settings on social media.
+Use encryption tools to protect sensitive communications.
+Educate yourself on the latest cybersecurity threats and scams.
+Dispose of old devices securely by wiping all data first.
+Be cautious of holiday scams and unsolicited offers.
