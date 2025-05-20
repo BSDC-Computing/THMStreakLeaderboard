@@ -250,80 +250,78 @@
       });
     }
 
-function loadLeaderboard() {
-  fetch('leaderboard.txt')
-    .then(response => response.text())
-    .then(data => {
-      // Parse the leaderboard file
-      const rows = data.trim().split('\n').map(line => {
-        let [fullName, streakStr] = line.split(',');
-        fullName = fullName.trim();
-        const streak = parseInt(streakStr);
+    function loadLeaderboard() {
+      fetch('leaderboard.txt')
+        .then(response => response.text())
+        .then(data => {
+          // Parse the leaderboard file
+          const rows = data.trim().split('\n').map(line => {
+            let [fullName, streakStr] = line.split(',');
+            fullName = fullName.trim();
+            const streak = parseInt(streakStr);
 
-        // Extract class if in parentheses in the name
-        let className = null;
-        const classMatch = fullName.match(/\(([^)]+)\)$/);
-        if (classMatch) {
-          className = classMatch[1].trim();
-          fullName = fullName.replace(/\s*\([^)]+\)$/, '').trim();
-        }
+            // Extract class if in parentheses in the name
+            let className = null;
+            const classMatch = fullName.match(/\(([^)]+)\)$/);
+            if (classMatch) {
+              className = classMatch[1].trim();
+              fullName = fullName.replace(/\s*\([^)]+\)$/, '').trim();
+            }
 
-        return { name: fullName, streak, className };
-      });
+            return { name: fullName, streak, className };
+          });
 
-      // Sort descending by streak
-      rows.sort((a, b) => b.streak - a.streak);
+          // Sort descending by streak
+          rows.sort((a, b) => b.streak - a.streak);
 
-      // Find highest streak per class
-      const highestPerClass = {};
-      rows.forEach(entry => {
-        if (entry.className) {
-          if (!highestPerClass[entry.className] || entry.streak > highestPerClass[entry.className]) {
-            highestPerClass[entry.className] = entry.streak;
-          }
-        }
-      });
+          // Find highest streak per class
+          const highestPerClass = {};
+          rows.forEach(entry => {
+            if (entry.className) {
+              if (!highestPerClass[entry.className] || entry.streak > highestPerClass[entry.className].streak) {
+                highestPerClass[entry.className] = entry;
+              }
+            }
+          });
 
-      // Build table rows with highlighting for highest per class
-      const tbody = document.getElementById('leaderboard-body');
-      tbody.innerHTML = '';  // clear current content
+          // Build table rows with highlighting for highest per class
+          const tbody = document.getElementById('leaderboard-body');
+          tbody.innerHTML = '';  // clear current content
 
-      rows.forEach((entry, index) => {
-        const tr = document.createElement('tr');
+          rows.forEach((entry, index) => {
+            const tr = document.createElement('tr');
 
-        // Check if this entry has the highest streak for their class
-        const isHighestInClass = entry.className && (entry.streak === highestPerClass[entry.className]);
+            // Check if this entry has the highest streak for their class
+            const highestEntry = entry.className ? highestPerClass[entry.className] : null;
+            const isHighestInClass = highestEntry && (entry.name === highestEntry.name) && (entry.streak === highestEntry.streak);
 
-        if (isHighestInClass) {
-          tr.classList.add('active');
-        }
+            if (isHighestInClass) {
+              tr.classList.add('active');
+            }
 
-        // Add medal classes for top 3 overall
-        if (index === 0) tr.classList.add('gold');
-        else if (index === 1) tr.classList.add('silver');
-        else if (index === 2) tr.classList.add('bronze');
+            // Add medal classes for top 3 overall
+            if (index === 0) tr.classList.add('gold');
+            else if (index === 1) tr.classList.add('silver');
+            else if (index === 2) tr.classList.add('bronze');
 
-        // Build cells
-        tr.innerHTML = `
-          <td>${index + 1}</td>
-          <td>${entry.name}${entry.className ? ` <small>(${entry.className})</small>` : ''}</td>
-          <td>${entry.streak} ${milestoneBadge(entry.streak)}</td>
-        `;
+            // Build cells
+            tr.innerHTML = `
+              <td>${index + 1}</td>
+              <td>${entry.name}${entry.className ? ` <small>(${entry.className})</small>` : ''}</td>
+              <td>${entry.streak} ${milestoneBadge(entry.streak)}</td>
+            `;
 
-        tbody.appendChild(tr);
-      });
+            tbody.appendChild(tr);
+          });
 
-      // Update last updated time
-      const lastUpdated = new Date();
-      document.getElementById('last-updated').textContent = 'Last updated: ' + lastUpdated.toLocaleString();
-    })
-    .catch(err => {
-      document.getElementById('leaderboard-body').innerHTML = `<tr><td colspan="3">Failed to load leaderboard data.</td></tr>`;
-      console.error('Error loading leaderboard:', err);
-    });
-
-
-    
+          // Update last updated time
+          const lastUpdated = new Date();
+          document.getElementById('last-updated').textContent = 'Last updated: ' + lastUpdated.toLocaleString();
+        })
+        .catch(err => {
+          document.getElementById('leaderboard-body').innerHTML = `<tr><td colspan="3">Failed to load leaderboard data.</td></tr>`;
+          console.error('Error loading leaderboard:', err);
+        });
     }
 
     // Countdown timer for refresh
