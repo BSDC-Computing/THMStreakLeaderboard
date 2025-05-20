@@ -184,6 +184,19 @@
       background-color: #e9f5e9;
       color: #2a4d2a;
     }
+
+    /* Section for highest streak in groups */
+    #highest-group-section {
+      max-width: 800px;
+      margin: 2rem auto;
+      background-color: #283c63;
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+      color: #a6ff00;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      font-size: 1.1rem;
+    }
+
   </style>
 </head>
 <body>
@@ -210,6 +223,13 @@
   <div id="monthly-tip-container">
     <strong>Monthly Cybersecurity Tip:</strong> <span id="monthly-tip">Loading tip...</span>
   </div>
+
+  <section id="highest-group-section" aria-label="Highest streak users per group">
+    <strong>Highest streak user(s) per group:</strong>
+    <ul id="highest-group-list">
+      <li>Loading...</li>
+    </ul>
+  </section>
 
   <p id="countdown">Refreshing in 10 seconds...</p>
   <p id="last-updated"></p>
@@ -254,13 +274,13 @@
       fetch('leaderboard.txt')
         .then(response => response.text())
         .then(data => {
-          // Parse the leaderboard file
+          // Parse leaderboard data
           const rows = data.trim().split('\n').map(line => {
             let [fullName, streakStr] = line.split(',');
             fullName = fullName.trim();
             const streak = parseInt(streakStr);
 
-            // Extract class if in parentheses in the name
+            // Extract group from parentheses
             let className = null;
             const classMatch = fullName.match(/\(([^)]+)\)$/);
             if (classMatch) {
@@ -274,102 +294,111 @@
           // Sort descending by streak
           rows.sort((a, b) => b.streak - a.streak);
 
-          // Find highest streak per class
+          // Find highest streak per group and store all top users (in case of ties)
           const highestPerClass = {};
+          const topUsersPerClass = {};
           rows.forEach(entry => {
             if (entry.className) {
-              if (!highestPerClass[entry.className] || entry.streak > highestPerClass[entry.className].streak) {
-                highestPerClass[entry.className] = entry;
+              if (!highestPerClass[entry.className] || entry.streak > highestPerClass[entry.className]) {
+                highestPerClass[entry.className] = entry.streak;
+                topUsersPerClass[entry.className] = [entry.name];
+              } else if (entry.streak === highestPerClass[entry.className]) {
+                topUsersPerClass[entry.className].push(entry.name);
               }
             }
           });
 
-          // Build table rows with highlighting for highest per class
           const tbody = document.getElementById('leaderboard-body');
-          tbody.innerHTML = '';  // clear current content
+          tbody.innerHTML = '';
 
-          rows.forEach((entry, index) => {
+          rows.forEach((user, idx) => {
             const tr = document.createElement('tr');
+            if (idx === 0) tr.classList.add('gold');
+            else if (idx === 1) tr.classList.add('silver');
+            else if (idx === 2) tr.classList.add('bronze');
 
-            // Check if this entry has the highest streak for their class
-            const highestEntry = entry.className ? highestPerClass[entry.className] : null;
-            const isHighestInClass = highestEntry && (entry.name === highestEntry.name) && (entry.streak === highestEntry.streak);
-
-            if (isHighestInClass) {
-              tr.classList.add('active');
-            }
-
-            // Add medal classes for top 3 overall
-            if (index === 0) tr.classList.add('gold');
-            else if (index === 1) tr.classList.add('silver');
-            else if (index === 2) tr.classList.add('bronze');
-
-            // Build cells
             tr.innerHTML = `
-              <td>${index + 1}</td>
-              <td>${entry.name}${entry.className ? ` <small>(${entry.className})</small>` : ''}</td>
-              <td>${entry.streak} ${milestoneBadge(entry.streak)}</td>
+              <td>${idx + 1}</td>
+              <td>${user.name} ${milestoneBadge(user.streak)}</td>
+              <td>${user.streak}</td>
             `;
-
             tbody.appendChild(tr);
           });
 
-          // Update last updated time
-          const lastUpdated = new Date();
-          document.getElementById('last-updated').textContent = 'Last updated: ' + lastUpdated.toLocaleString();
-        })
-        .catch(err => {
-          document.getElementById('leaderboard-body').innerHTML = `<tr><td colspan="3">Failed to load leaderboard data.</td></tr>`;
-          console.error('Error loading leaderboard:', err);
-        });
-    }
+          // Populate highest streak per group section
+          const highestList = document.getElementById('highest-group-list');
+          highestList.innerHTML = '';
 
-    // Countdown timer for refresh
-    let refreshInterval = 10;
-    function countdown() {
-      const countdownEl = document.getElementById('countdown');
-      if (refreshInterval === 0) {
-        loadLeaderboard();
-        showMonthlyTip();
-        refreshInterval = 10;
-      }
-      countdownEl.textContent = `Refreshing in ${refreshInterval} seconds...`;
-      refreshInterval--;
-    }
-
-    function showMonthlyTip() {
-      fetch('monthly_tips.txt')
-        .then(response => {
-          if (!response.ok) throw new Error('Failed to load monthly tips');
-          return response.text();
-        })
-        .then(text => {
-          const tips = text.trim().split('\n');
-          const now = new Date();
-          const month = now.getMonth(); // 0 = Jan ... 11 = Dec
-          const tipElement = document.getElementById('monthly-tip');
-
-          if (tips.length < 12) {
-            tipElement.textContent = "Monthly tips file must contain 12 lines.";
-            return;
+          if (Object.keys(topUsersPerClass).length === 0) {
+            highestList.innerHTML = '<li>No group data available</li>';
+          } else {
+            for (const [group, users] of Object.entries(topUsersPerClass)) {
+              const usersStr = users.join(', ');
+              const li = document.createElement('li');
+              li.textContent = `${group}: ${usersStr} (Streak: ${highestPerClass[group]})`;
+              highestList.appendChild(li);
+            }
           }
 
-          tipElement.textContent = tips[month];
+          updateLastUpdated();
         })
-        .catch(err => {
-          document.getElementById('monthly-tip').textContent = "Could not load monthly tips.";
-          console.error(err);
+        .catch(() => {
+          const tbody = document.getElementById('leaderboard-body');
+          tbody.innerHTML = '<tr><td colspan="3">Failed to load leaderboard data.</td></tr>';
+
+          const highestList = document.getElementById('highest-group-list');
+          highestList.innerHTML = '<li>Failed to load group data.</li>';
         });
     }
 
-    // Load theme preference
+    function updateLastUpdated() {
+      const now = new Date();
+      document.getElementById('last-updated').textContent = 'Last updated: ' + now.toLocaleString();
+    }
+
+    // Load monthly tips from external file
+    function loadMonthlyTips() {
+      fetch('monthly_tips.txt')
+        .then(response => response.text())
+        .then(data => {
+          const tips = data.trim().split('\n').filter(line => line.length > 0);
+          if (tips.length === 0) {
+            document.getElementById('monthly-tip').textContent = "No tips available right now.";
+            return;
+          }
+          const randomIndex = Math.floor(Math.random() * tips.length);
+          document.getElementById('monthly-tip').textContent = tips[randomIndex];
+        })
+        .catch(() => {
+          document.getElementById('monthly-tip').textContent = "Failed to load tips.";
+        });
+    }
+
+    // Countdown for refresh
+    let countdownSeconds = 10;
+    function countdown() {
+      const countdownEl = document.getElementById('countdown');
+      if (countdownSeconds === 0) {
+        loadLeaderboard();
+        loadMonthlyTips();
+        countdownSeconds = 10;
+      } else {
+        countdownEl.textContent = `Refreshing in ${countdownSeconds} second${countdownSeconds !== 1 ? 's' : ''}...`;
+        countdownSeconds--;
+      }
+    }
+
+    // On page load
     window.onload = () => {
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme === 'light') {
+      // Apply saved theme
+      if(localStorage.getItem('theme') === 'light') {
         document.body.classList.add('light-mode');
       }
+
       loadLeaderboard();
-      showMonthlyTip();
+      loadMonthlyTips();
+      updateLastUpdated();
+
       setInterval(countdown, 1000);
     };
   </script>
