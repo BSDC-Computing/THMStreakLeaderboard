@@ -35,18 +35,18 @@ Ant (L3 Network & Cyber Year 2), 0
 Ben Watson (L3 Network & Cyber Year 2), 0
 Owen Whitfield (L3 Network & Cyber Year 2), 0
 Ewan (L3 Network & Cyber Year 2), 0
-Albert (L3 App Dev Year 1), 1
+Albert (L3 App Dev Year 1), 0
 Alanya (L3 App Dev Year 1), 0
 Jad (L3 App Dev Year 1), 0
-Danyal (L3 App Dev Year 1), 1
+Danyal (L3 App Dev Year 1), 0
 Will (L3 App Dev Year 1), 0
 Daniel (L3 App Dev Year 1), 0
-Alfie (L3 App Dev Year 1), 1
-Lily (L3 App Dev Year 1), 1
-George (L3 App Dev Year 1), 1
-Dragos (L3 App Dev Year 1), 1
+Alfie (L3 App Dev Year 1), 0
+Lily (L3 App Dev Year 1), 0
+George (L3 App Dev Year 1), 0
+Dragos (L3 App Dev Year 1), 0
 Archie (L3 App Dev Year 1), 0
-Sienna (L3 App Dev Year 1), 1
+Sienna (L3 App Dev Year 1), 0
 Alan (L3 App Dev Year 1), 0
 Stefan (L3 App Dev Year 1), 0
 Mollie (L3 App Dev Year 1), 0
@@ -55,6 +55,6 @@ Amelia (L3 App Dev Year 1), 0
 Madalin (L3 App Dev Year 1), 0
 James (L3 App Dev Year 1), 0
 Mari (L3 App Dev Year 1), 0
-Owen (L3 App Dev Year 1), 1
+Owen (L3 App Dev Year 1), 0
 Joe (L3 App Dev Year 1), 0
 Fatima (L3 App Dev Year 1), 0
