@@ -1,0 +1,186 @@
+body {
+  margin: 0;
+  font-family: 'Fira Sans', sans-serif;
+  background-color: #1b2640;
+  color: #e5f4ff;
+}
+
+body.light-mode {
+  background-color: #f9f9f9;
+  color: #222;
+}
+
+header {
+  background: linear-gradient(270deg, #1b2640, #283c63, #1b2640);
+  background-size: 600% 600%;
+  animation: gradientMove 15s ease infinite;
+  padding: 1.5rem;
+  text-align: center;
+  border-bottom: 3px solid #a6ff00;
+}
+
+header h1 {
+  margin: 0;
+  color: #a6ff00;
+  font-size: 2.5rem;
+}
+
+table {
+  width: 100%;
+  max-width: 800px;
+  margin: 2rem auto;
+  border-collapse: collapse;
+  background-color: #223050;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  overflow-x: auto;
+}
+
+body.light-mode table {
+  background-color: #fff;
+  color: #222;
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+  color: #e5f4ff;
+  vertical-align: middle;
+}
+
+body.light-mode th, body.light-mode td {
+  color: #222;
+}
+
+th {
+  background-color: #2e3d5c;
+  color: #a6ff00;
+  font-size: 1.1rem;
+}
+
+body.light-mode th {
+  background-color: #eee;
+  color: #1b2640;
+}
+
+tr {
+  border-bottom: 1px solid #34435f;
+}
+
+tr:nth-child(even) {
+  background-color: #1f2a44;
+}
+
+tbody tr:hover {
+  background-color: #2e3d5c;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.gold { background-color: #b8860b !important; color: black; }
+.silver { background-color: #a9a9a9 !important; color: black; }
+.bronze { background-color: #cd7f32 !important; color: black; }
+.active { border-left: 4px solid #a6ff00; font-weight: bold; }
+
+.fade-in {
+  animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.refresh-btn {
+  display: block;
+  margin: 1rem auto;
+  background-color: #a6ff00;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #1b2640;
+  font-size: 1rem;
+}
+
+.streak-badge {
+  margin-left: 10px;
+  font-weight: bold;
+  color: #ff9800;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  color: #bcdcff;
+}
+
+#countdown, #last-updated {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: -1rem;
+}
+
+/* Progress bar styles */
+.progress-bar-container {
+  background: #40587b;
+  border-radius: 12px;
+  height: 18px;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 6px;
+}
+
+.progress-bar-fill {
+  background: #a6ff00;
+  height: 100%;
+  width: 0%;
+  border-radius: 12px 0 0 12px;
+  transition: width 0.6s ease;
+}
+
+body.light-mode tr:nth-child(even) {
+  background-color: #f5f5f5;  /* very light grey, subtle stripe */
+}
+
+body.light-mode tbody tr:hover {
+  background-color: #d1d1d1; /* light hover effect */
+}
+
+/* Monthly tip styles */
+#monthly-tip-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem 1.5rem;
+  background-color: #223050;
+  color: #a6ff00;
+  font-size: 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  font-style: italic;
+}
+
+body.light-mode #monthly-tip-container {
+  background-color: #e9f5e9;
+  color: #2a4d2a;
+}
+
+/* Section for highest streak in groups */
+#highest-group-section {
+  max-width: 800px;
+  margin: 2rem auto;
+  background-color: #283c63;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  color: #a6ff00;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  font-size: 1.1rem;
+}
