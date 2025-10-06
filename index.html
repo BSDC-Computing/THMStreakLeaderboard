@@ -138,20 +138,7 @@
             tbody.appendChild(tr);
           });
 
-          // Populate highest streak per group section
-          const highestList = document.getElementById('highest-group-list');
-          highestList.innerHTML = '';
-
-          if (Object.keys(topUsersPerClass).length === 0) {
-            highestList.innerHTML = '<li>No group data available</li>';
-          } else {
-            for (const [group, users] of Object.entries(topUsersPerClass)) {
-              const usersStr = users.join(', ');
-              const li = document.createElement('li');
-              li.textContent = `${group}: ${usersStr} (Streak: ${highestPerClass[group]})`;
-              highestList.appendChild(li);
-            }
-          }
+          
 
           updateLastUpdated();
         })
