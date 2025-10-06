@@ -1,60 +1,26 @@
-Michael (Staff), 382
+Michael (Staff), 455
 Callum (Staff), 0
-Solomon (T-Level Cyber Year 1), 0
-Saarah (T-Level Cyber Year 1), 0
-Oskars (T-Level Cyber Year 1), 0
-Mohammed (T-Level Cyber Year 1), 31
-Cole (T-Level Cyber Year 1), 0
-Fin (T-Level Cyber Year 1), 0
-Noah (T-Level Cyber Year 1), 0
-Devon (T-Level Cyber Year 1), 0
-Isa (T-Level Cyber Year 1), 0
-Dawood (L3 Network & Cyber Year 2), 0
-Alberto (L3 Network & Cyber Year 2), 0
-Ismaael (L3 Network & Cyber Year 2), 0
-Musty (L3 Network & Cyber Year 2), 0
-Tom (L3 Network & Cyber Year 2), 0
-Fin (L3 Network & Cyber Year 2), 0
-Ben Beacham (L3 Network & Cyber Year 2), 0
-Milosz (L3 Network & Cyber Year 2), 0
-Kyle (L3 Network & Cyber Year 2), 0
-Liam (L3 Network & Cyber Year 2), 0
-Humayoun (L3 Network & Cyber Year 2), 0
-Nyle (L3 Network & Cyber Year 2), 0
-Jamie (L3 Network & Cyber Year 2), 0
-Zayan (L3 Network & Cyber Year 2), 0
-Liviu (L3 Network & Cyber Year 2), 0
-Ryan (L3 Network & Cyber Year 2), 0
-Alex (L3 Network & Cyber Year 2), 0
-Harry (L3 Network & Cyber Year 2), 0
-Owen Reeve (L3 Network & Cyber Year 2), 0
-Mario (L3 Network & Cyber Year 2), 0
-Armandas (L3 Network & Cyber Year 2), 0
-Hamzah (L3 Network & Cyber Year 2), 0
-Ant (L3 Network & Cyber Year 2), 0
-Ben Watson (L3 Network & Cyber Year 2), 0
-Owen Whitfield (L3 Network & Cyber Year 2), 0
-Ewan (L3 Network & Cyber Year 2), 0
-Albert (L3 App Dev Year 1), 0
-Alanya (L3 App Dev Year 1), 0
-Jad (L3 App Dev Year 1), 0
-Danyal (L3 App Dev Year 1), 0
-Will (L3 App Dev Year 1), 0
-Daniel (L3 App Dev Year 1), 0
-Alfie (L3 App Dev Year 1), 0
-Lily (L3 App Dev Year 1), 0
-George (L3 App Dev Year 1), 0
-Dragos (L3 App Dev Year 1), 0
-Archie (L3 App Dev Year 1), 0
-Sienna (L3 App Dev Year 1), 0
-Alan (L3 App Dev Year 1), 0
-Stefan (L3 App Dev Year 1), 0
-Mollie (L3 App Dev Year 1), 0
-Jorja (L3 App Dev Year 1), 0
-Amelia (L3 App Dev Year 1), 0
-Madalin (L3 App Dev Year 1), 0
-James (L3 App Dev Year 1), 0
-Mari (L3 App Dev Year 1), 0
-Owen (L3 App Dev Year 1), 0
-Joe (L3 App Dev Year 1), 0
-Fatima (L3 App Dev Year 1), 0
+Solomon (T-Level Cyber Year 2), 0
+Saarah (T-Level Cyber Year 2), 0
+Oskars (T-Level Cyber Year 2), 0
+Mohammed (T-Level Cyber Year 2), 0
+Cole (T-Level Cyber Year 2), 0
+Fin (T-Level Cyber Year 2), 0
+Noah (T-Level Cyber Year 2), 0
+Devon (T-Level Cyber Year 2), 0
+Isa (T-Level Cyber Year 2), 0
+Josh (T-Level Cyber Year 1), 0
+Matju (T-Level Cyber Year 1), 0
+Taranvir (T-Level Cyber Year 1), 0
+Najam (T-Level Cyber Year 1), 0
+Zoheb (T-Level Cyber Year 1), 0
+Dominik (T-Level Cyber Year 1), 0
+Spike (T-Level Cyber Year 1), 0
+Ryley (T-Level Cyber Year 1), 0
+Imran (T-Level Cyber Year 1), 0
+Lauren (T-Level Cyber Year 1), 0
+Leanna (T-Level Cyber Year 1), 0
+Fred (T-Level Cyber Year 1), 0
+Aron (T-Level Cyber Year 1), 0
+Jack (T-Level Cyber Year 1), 0
+Oli (T-Level Cyber Year 1), 0
