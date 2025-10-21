@@ -1,6 +1,6 @@
 <a href="https://tryhackme.com/p/MichaelLynch"> Michael </a> (Staff), 470
 Callum (Staff), 0
-Solomon (T-Level Cyber Year 2), 0
+<a href="https://tryhackme.com/p/0xVortex"> Solomon </a> (T-Level Cyber Year 2), 0
 Saarah (T-Level Cyber Year 2), 0
 Oskars (T-Level Cyber Year 2), 0
 Mohammed (T-Level Cyber Year 2), 0
@@ -24,6 +24,7 @@ Fred (T-Level Cyber Year 1), 0
 Aron (T-Level Cyber Year 1), 0
 Jack (T-Level Cyber Year 1), 0
 Oli (T-Level Cyber Year 1), 0
+
 
 
 
