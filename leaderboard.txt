@@ -1,4 +1,4 @@
-<a href="https://tryhackme.com/p/MichaelLynch"> Michael </a> (Staff), 455
+<a href="https://tryhackme.com/p/MichaelLynch"> Michael </a> (Staff), 470
 Callum (Staff), 0
 Solomon (T-Level Cyber Year 2), 0
 Saarah (T-Level Cyber Year 2), 0
@@ -8,7 +8,7 @@ Cole (T-Level Cyber Year 2), 0
 Fin (T-Level Cyber Year 2), 0
 Noah (T-Level Cyber Year 2), 0
 Devon (T-Level Cyber Year 2), 0
-Isa (T-Level Cyber Year 2), 0
+Isa (T-Level Cyber Year 2), 16
 Josh (T-Level Cyber Year 1), 0
 Matju (T-Level Cyber Year 1), 0
 Taranvir (T-Level Cyber Year 1), 0
@@ -24,5 +24,6 @@ Fred (T-Level Cyber Year 1), 0
 Aron (T-Level Cyber Year 1), 0
 Jack (T-Level Cyber Year 1), 0
 Oli (T-Level Cyber Year 1), 0
+
 
 
