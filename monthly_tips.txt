@@ -81,7 +81,7 @@ Avoid oversharing professional details on public platforms like LinkedIn.
 Regularly clear your call and message logs on mobile devices.
 Be cautious with browser extensions and plugins; install only trusted ones.
 Keep a list of your devices and their serial numbers for tracking.
-Enable “find my device” features for mobile and laptops.
+Enable “find my device” features for all mobile devices (smartphones, tablets, laptops, etc).
 Review security settings on your IoT (smart home) devices.
 Avoid connecting to networks that require you to install unknown certificates.
 Use a separate device or profile for online banking.
@@ -98,3 +98,4 @@ Consider disabling JavaScript on browsers for added security (with caution).
 Never plug in unknown USB devices into your computer.
 Create regular security audits for your personal devices.
 Stay informed about new cyber threats from trusted sources and government advisories
+
