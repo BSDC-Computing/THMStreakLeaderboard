@@ -184,3 +184,24 @@ body.light-mode #monthly-tip-container {
   box-shadow: 0 8px 16px rgba(0,0,0,0.3);
   font-size: 1.1rem;
 }
+
+/* Hyperlink styles */
+a {
+  color: #ffffff; /* white text for dark mode */
+  text-decoration: none; /* optional - removes underline */
+}
+
+a:hover {
+  color: #a6ff00; /* matches your accent colour */
+  text-decoration: underline; /* optional hover effect */
+}
+
+/* Light mode hyperlinks */
+body.light-mode a {
+  color: #1b2640; /* dark text for light mode */
+}
+
+body.light-mode a:hover {
+  color: #283c63; /* darker hover colour for light mode */
+}
+
