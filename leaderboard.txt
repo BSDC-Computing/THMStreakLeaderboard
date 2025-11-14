@@ -5,7 +5,7 @@ Saarah (T-Level Cyber Year 2), 0
 <a href="https://tryhackme.com/p/Bigman12346"> Oskars </a> (T-Level Cyber Year 2), 0
 <a href="https://tryhackme.com/p/mohammed.k">Mohammed </a>(T-Level Cyber Year 2), 67
 <a href="https://tryhackme.com/p/Colemathews"> Cole </a> (T-Level Cyber Year 2), 0
-<a href="https://tryhackme.com/p/Jello145"> Fin </a> (T-Level Cyber Year 2), 9
+<a href="https://tryhackme.com/p/Jello145"> Fin </a> (T-Level Cyber Year 2), 11
 Noah (T-Level Cyber Year 2), 0
 <a href="https://tryhackme.com/p/Devon.T"> Devon </a> (T-Level Cyber Year 2), 0
 <a href="https://tryhackme.com/p/isaz"> Isa </a> (T-Level Cyber Year 2), 40
@@ -24,6 +24,7 @@ Noah (T-Level Cyber Year 2), 0
 <a href="https://tryhackme.com/p/TheresaMay"> Aron </a> (T-Level Cyber Year 1), 1
 <a href="https://tryhackme.com/p/iamjaf"> Jack </a> (T-Level Cyber Year 1), 1
 <a href="https://tryhackme.com/p/O.millidge"> Oli </a> (T-Level Cyber Year 1), 1
+
 
 
 
