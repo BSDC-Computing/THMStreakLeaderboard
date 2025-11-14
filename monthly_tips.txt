@@ -13,8 +13,8 @@ Be cautious of holiday scams and unsolicited offers.
 Use a password manager to generate and store complex passwords safely.
 Avoid sharing personal information on unsecured websites.
 Log out of accounts when using shared or public computers.
-Disable Bluetooth when not in use to prevent unauthorized access.
-Use a firewall to block unauthorized network traffic.
+Disable Bluetooth when not in use to prevent unauthorised access.
+Use a firewall to block unauthorised network traffic.
 Regularly scan USB devices for malware before use.
 Monitor your bank and credit card statements for suspicious activity.
 Set up account recovery options like a backup email or phone number.
@@ -98,4 +98,5 @@ Consider disabling JavaScript on browsers for added security (with caution).
 Never plug in unknown USB devices into your computer.
 Create regular security audits for your personal devices.
 Stay informed about new cyber threats from trusted sources and government advisories
+
 
