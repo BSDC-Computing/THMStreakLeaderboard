@@ -1,14 +1,14 @@
-<a href="https://tryhackme.com/p/MichaelLynch"> Michael </a> (Staff), 483
+<a href="https://tryhackme.com/p/MichaelLynch"> Michael </a> (Staff), 494
 <a href="https://tryhackme.com/p/callum.churches"> Callum </a> (Staff), 0
 <a href="https://tryhackme.com/p/0xVortex"> Solomon </a> (T-Level Cyber Year 2), 1
 Saarah (T-Level Cyber Year 2), 0
 <a href="https://tryhackme.com/p/Bigman12346"> Oskars </a> (T-Level Cyber Year 2), 0
-<a href="https://tryhackme.com/p/mohammed.k">Mohammed </a>(T-Level Cyber Year 2), 57
+<a href="https://tryhackme.com/p/mohammed.k">Mohammed </a>(T-Level Cyber Year 2), 67
 <a href="https://tryhackme.com/p/Colemathews"> Cole </a> (T-Level Cyber Year 2), 0
-<a href="https://tryhackme.com/p/Jello145"> Fin </a> (T-Level Cyber Year 2), 0
+<a href="https://tryhackme.com/p/Jello145"> Fin </a> (T-Level Cyber Year 2), 9
 Noah (T-Level Cyber Year 2), 0
 <a href="https://tryhackme.com/p/Devon.T"> Devon </a> (T-Level Cyber Year 2), 0
-<a href="https://tryhackme.com/p/isaz"> Isa </a> (T-Level Cyber Year 2), 29
+<a href="https://tryhackme.com/p/isaz"> Isa </a> (T-Level Cyber Year 2), 38
 Josh (T-Level Cyber Year 1), 0
 Matju (T-Level Cyber Year 1), 0
 Taranvir (T-Level Cyber Year 1), 0
@@ -24,6 +24,7 @@ Fred (T-Level Cyber Year 1), 0
 Aron (T-Level Cyber Year 1), 0
 Jack (T-Level Cyber Year 1), 0
 Oli (T-Level Cyber Year 1), 0
+
 
 
 
