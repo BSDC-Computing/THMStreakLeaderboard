@@ -21,9 +21,10 @@ Noah (T-Level Cyber Year 2), 0
 <a href="https://tryhackme.com/p/LOZA"> Lauren </a> (T-Level Cyber Year 1), 1
 <a href="https://tryhackme.com/p/cqrmxi"> Leanna </a> (T-Level Cyber Year 1), 1
 <a href="https://tryhackme.com/p/30274142"> Fred </a> (T-Level Cyber Year 1), 0
-<a href="https://tryhackme.com/p/TheresaMay?tab=completed-rooms"> Aron </a> (T-Level Cyber Year 1), 0
+<a href="https://tryhackme.com/p/TheresaMay"> Aron </a> (T-Level Cyber Year 1), 0
 <a href="https://tryhackme.com/p/iamjaf"> Jack </a> (T-Level Cyber Year 1), 1
 <a href="https://tryhackme.com/p/O.millidge"> Oli </a> (T-Level Cyber Year 1), 1
+
 
 
 
