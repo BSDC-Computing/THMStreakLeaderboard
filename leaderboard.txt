@@ -24,26 +24,3 @@ Saarah (T-Level Cyber Year 2), 0
 <a href="https://tryhackme.com/p/TheresaMay"> Aron </a> (T-Level Cyber Year 1), 1
 <a href="https://tryhackme.com/p/iamjaf"> Jack </a> (T-Level Cyber Year 1), 1
 <a href="https://tryhackme.com/p/O.millidge"> Oli </a> (T-Level Cyber Year 1), 1
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
