@@ -1,5 +1,5 @@
 <a href="https://tryhackme.com/p/MichaelLynch"> Michael </a> (Staff), 571
-<a href="https://tryhackme.com/p/callum.churches"> Callum </a> (Staff), 1
+<a href="https://tryhackme.com/p/callum.churches"> Callum </a> (Staff), 0
 <a href="https://tryhackme.com/p/0xVortex"> Solomon </a> (T-Level Cyber Year 2), 39
 <a href="https://tryhackme.com/p/Bigman12346"> Oskars </a> (T-Level Cyber Year 2), 0
 <a href="https://tryhackme.com/p/mohammed.k">Mohammed </a>(T-Level Cyber Year 2), 145
@@ -23,6 +23,7 @@
 <a href="https://tryhackme.com/p/TheresaMay"> Aron </a> (T-Level Cyber Year 1), 0
 <a href="https://tryhackme.com/p/iamjaf"> Jack </a> (T-Level Cyber Year 1), 1
 <a href="https://tryhackme.com/p/O.millidge"> Oli </a> (T-Level Cyber Year 1), 1
+
 
 
 
